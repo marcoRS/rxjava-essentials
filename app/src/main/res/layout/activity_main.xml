@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+  android:id="@+id/drawer"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true">
+
+  <com.packtpub.apps.rxjava_essentials.ScrimInsetsFrameLayout
+    android:id="@+id/scrimInsetsFrameLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    android:fitsSystemWindows="true"
+    app:insetForeground="#29000000" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+      android:id="@+id/toolbar_actionbar"
+      layout="@layout/toolbar_default"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+    <FrameLayout
+      android:id="@+id/container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clickable="true" />
+  </LinearLayout>
+  <!-- android:layout_marginTop="?android:attr/actionBarSize"-->
+
+  <fragment
+    android:id="@+id/fragment_drawer"
+    android:name="com.packtpub.apps.rxjava_essentials.navigation_drawer.NavigationDrawerFragment"
+    android:layout_width="@dimen/navigation_drawer_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:layout="@layout/fragment_navigation_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
